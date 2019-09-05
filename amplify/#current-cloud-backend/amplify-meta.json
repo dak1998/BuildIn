@@ -1,14 +1,36 @@
 {
-    "providers": {
-        "awscloudformation": {
-            "AuthRoleName": "buildin-aadl-20190827123243-authRole",
-            "UnauthRoleArn": "arn:aws:iam::630724161648:role/buildin-aadl-20190827123243-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::630724161648:role/buildin-aadl-20190827123243-authRole",
-            "Region": "ap-south-1",
-            "DeploymentBucketName": "buildin-aadl-20190827123243-deployment",
-            "UnauthRoleName": "buildin-aadl-20190827123243-unauthRole",
-            "StackName": "buildin-aadl-20190827123243",
-            "StackId": "arn:aws:cloudformation:ap-south-1:630724161648:stack/buildin-aadl-20190827123243/ab2df210-c898-11e9-9e40-06c541265f78"
-        }
-    }
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "buildin-dev-20190905184223-authRole",
+			"UnauthRoleArn": "arn:aws:iam::630724161648:role/buildin-dev-20190905184223-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::630724161648:role/buildin-dev-20190905184223-authRole",
+			"Region": "ap-south-1",
+			"DeploymentBucketName": "buildin-dev-20190905184223-deployment",
+			"UnauthRoleName": "buildin-dev-20190905184223-unauthRole",
+			"StackName": "buildin-dev-20190905184223",
+			"StackId": "arn:aws:cloudformation:ap-south-1:630724161648:stack/buildin-dev-20190905184223/cd08dbf0-cfde-11e9-ade6-06ba22c3467e"
+		}
+	},
+	"auth": {
+		"buildin67fb0b8467fb0b84": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/buildin-dev-20190905184223-deployment/amplify-cfn-templates/auth/buildin67fb0b8467fb0b84-cloudformation-template.yml",
+				"logicalId": "authbuildin67fb0b8467fb0b84"
+			},
+			"lastPushTimeStamp": "2019-09-05T13:19:05.451Z",
+			"output": {
+				"AppClientSecret": "160lrvl5ajqitj987r26ahemoshf32orb2d8m9pv8cii2pl99dkc",
+				"UserPoolId": "ap-south-1_uIDKUbsWM",
+				"AppClientIDWeb": "70mh3979jr4rkq4g090d9l5ajj",
+				"AppClientID": "6qq2hflffs8jh744j9i101p6k0",
+				"IdentityPoolId": "ap-south-1:a8c714e9-beba-49df-b80a-699bab7366e1",
+				"IdentityPoolName": "buildin67fb0b84_identitypool_67fb0b84__dev",
+				"UserPoolName": "buildin67fb0b84_userpool_67fb0b84"
+			},
+			"lastPushDirHash": "rFtiQtR782JP1x0A+oC2L18y+tg="
+		}
+	}
 }

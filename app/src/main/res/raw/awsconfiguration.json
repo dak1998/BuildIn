@@ -3,5 +3,21 @@
     "Version": "1.0",
     "IdentityManager": {
         "Default": {}
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "ap-south-1:a8c714e9-beba-49df-b80a-699bab7366e1",
+                "Region": "ap-south-1"
+            }
+        }
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "ap-south-1_uIDKUbsWM",
+            "AppClientId": "6qq2hflffs8jh744j9i101p6k0",
+            "AppClientSecret": "160lrvl5ajqitj987r26ahemoshf32orb2d8m9pv8cii2pl99dkc",
+            "Region": "ap-south-1"
+        }
     }
 }
