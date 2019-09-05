@@ -1,0 +1,7 @@
+{
+    "aadl": {
+        "configLevel": "project",
+        "useProfile": true,
+        "profileName": "macbook_air"
+    }
+}
