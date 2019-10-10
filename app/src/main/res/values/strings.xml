@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">BuildIn</string>
+    <string name="welcome_text">Welcome, Benedict.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back_button">back_button</string>
+    <string name="signup_confirm_password">Confirm Password</string>
+    <string name="login_header">Welcome Back! Please Login.</string>
+    <string name="welcome_new_user_please_sign_up">Welcome User! Please Register.</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="flat_number">Flat Number</string>
 </resources>
