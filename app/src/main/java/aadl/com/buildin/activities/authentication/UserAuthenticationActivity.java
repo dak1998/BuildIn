@@ -1,17 +1,19 @@
 package aadl.com.buildin.activities.authentication;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.widget.Toast;
 
 import aadl.com.buildin.R;
 import aadl.com.buildin.utils.NamedActionBar;
 
-public class UserAuthenticationActivity extends FragmentActivity implements LoginFragment.OnFragmentInteractionListener{
+public class UserAuthenticationActivity extends FragmentActivity implements LoginFragment.OnFragmentInteractionListener, SignupFragment.OnFragmentInteractionListener{
 
     private static final int NUM_PAGES = 2;
 
@@ -37,7 +39,7 @@ public class UserAuthenticationActivity extends FragmentActivity implements Logi
     }
 
     @Override
-    public void onLoginFragmentInteraction(LoginFragment.LoginActions action) {
+    public void onLoginFragmentInteraction(LoginFragment.LoginActions action, String data) {
         switch (action) {
             case SHOW_SIGN_UP:
                 mPager.setCurrentItem(1, true);
@@ -45,8 +47,28 @@ public class UserAuthenticationActivity extends FragmentActivity implements Logi
             case SIGN_IN_SUCCESS:
                 mActionBar.back();
                 break;
+            case SIGN_IN_FAILED:
+
+                Snackbar.make(mPager,data,Snackbar.LENGTH_LONG).show();
+                break;
         }
 
+    }
+
+    @Override
+    public void onSignupFragmentInteraction(SignupFragment.SignupActions action, String data) {
+        switch (action) {
+            case SHOW_SIGN_IN:
+                mPager.setCurrentItem(0, true);
+                break;
+            case SIGN_UP_SUCCESS:
+                mActionBar.back();
+                break;
+            case SIGN_UP_FAILED:
+//                Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
+                Snackbar.make(mPager,data,Snackbar.LENGTH_LONG).show();
+                break;
+        }
     }
 
 
