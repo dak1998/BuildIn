@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="aadl.com.buildin">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,10 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning"
         android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
 
-        >
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
 
@@ -32,6 +31,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.authentication.UserAuthenticationActivity" />
+        <activity android:name=".activities.issues.CreateNewIssueActivity"/>
+        <activity android:name=".activities.issues.IssuesActivity" />
     </application>
 
 </manifest>

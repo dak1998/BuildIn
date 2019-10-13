@@ -21,9 +21,7 @@ public class UserAuthenticationActivity extends FragmentActivity implements Logi
 
     private NamedActionBar mActionBar;
 
-    private void initializeView () {
-        this.mActionBar = NamedActionBar.in(this).setTitle("User Authentication").setOnBackClickListener(new NamedActionBar.AnimatedBackAction());
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +34,10 @@ public class UserAuthenticationActivity extends FragmentActivity implements Logi
         mPager = findViewById(R.id.authentication_view_pager);
         PagerAdapter pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(pagerAdapter);
+    }
+
+    private void initializeView () {
+        this.mActionBar = NamedActionBar.in(this).setTitle("User Authentication").setOnBackClickListener(new NamedActionBar.AnimatedBackAction());
     }
 
     @Override
