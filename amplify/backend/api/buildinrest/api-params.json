@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/upload/issue",
+            "lambdaFunction": "buildinrest",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "buildinrest",
+    "apiName": "buildinrest",
+    "functionArns": [
+        {
+            "lambdaFunction": "buildinrest"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "buildin-dev-20190905184223-authRole",
+        "unAuthRoleName": "buildin-dev-20190905184223-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "buildinrest",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

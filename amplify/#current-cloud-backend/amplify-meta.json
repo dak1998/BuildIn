@@ -20,7 +20,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/buildin-dev-20190905184223-deployment/amplify-cfn-templates/auth/buildin67fb0b8467fb0b84-cloudformation-template.yml",
 				"logicalId": "authbuildin67fb0b8467fb0b84"
 			},
-			"lastPushTimeStamp": "2019-09-05T13:19:05.451Z",
+			"lastPushTimeStamp": "2019-10-14T17:56:54.812Z",
 			"output": {
 				"AppClientSecret": "160lrvl5ajqitj987r26ahemoshf32orb2d8m9pv8cii2pl99dkc",
 				"UserPoolId": "ap-south-1_uIDKUbsWM",
@@ -31,6 +31,117 @@
 				"UserPoolName": "buildin67fb0b84_userpool_67fb0b84"
 			},
 			"lastPushDirHash": "rFtiQtR782JP1x0A+oC2L18y+tg="
+		}
+	},
+	"function": {
+		"buildindbTrigger6b1f8eb8": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "buildindb",
+					"attributes": [
+						"Name",
+						"Arn",
+						"StreamArn"
+					]
+				}
+			],
+			"lastPushTimeStamp": "2019-10-14T17:56:54.823Z",
+			"lastBuildTimeStamp": "2019-10-14T17:54:21.888Z",
+			"lastPackageTimeStamp": "2019-10-14T17:54:31.706Z",
+			"distZipFilename": "buildindbTrigger6b1f8eb8-456d365475496f6e4833-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/buildin-dev-20190905184223-deployment/amplify-cfn-templates/function/buildindbTrigger6b1f8eb8-cloudformation-template.json",
+				"logicalId": "functionbuildindbTrigger6b1f8eb8"
+			},
+			"output": {
+				"Region": "ap-south-1",
+				"Arn": "arn:aws:lambda:ap-south-1:630724161648:function:buildindbTrigger6b1f8eb8-dev",
+				"Name": "buildindbTrigger6b1f8eb8-dev",
+				"LambdaExecutionRole": "buildindbLambdaRole6b1f8eb8-dev"
+			},
+			"lastPushDirHash": "oTRd0emz9cBupA2kaahq8eFD/+Y="
+		},
+		"buildinrest": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "buildindb",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			],
+			"lastBuildTimeStamp": "2019-10-14T17:54:31.259Z",
+			"lastPackageTimeStamp": "2019-10-14T17:54:35.544Z",
+			"distZipFilename": "buildinrest-72327a7749424c63436b-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/buildin-dev-20190905184223-deployment/amplify-cfn-templates/function/buildinrest-cloudformation-template.json",
+				"logicalId": "functionbuildinrest"
+			},
+			"lastPushTimeStamp": "2019-10-14T17:56:54.823Z",
+			"output": {
+				"Region": "ap-south-1",
+				"Arn": "arn:aws:lambda:ap-south-1:630724161648:function:save_issue-dev",
+				"Name": "save_issue-dev",
+				"LambdaExecutionRole": "buildinLambdaRolec35073a7-dev"
+			},
+			"lastPushDirHash": "fLJaV6zw+YpGjC8MXWtGfUYKRJ8="
+		}
+	},
+	"storage": {
+		"buildindb": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/buildin-dev-20190905184223-deployment/amplify-cfn-templates/storage/buildindb-cloudformation-template.json",
+				"logicalId": "storagebuildindb"
+			},
+			"lastPushTimeStamp": "2019-10-14T17:56:54.823Z",
+			"output": {
+				"PartitionKeyName": "id",
+				"SortKeyName": "upvotes",
+				"SortKeyType": "N",
+				"Region": "ap-south-1",
+				"Arn": "arn:aws:dynamodb:ap-south-1:630724161648:table/issues-dev",
+				"StreamArn": "arn:aws:dynamodb:ap-south-1:630724161648:table/issues-dev/stream/2019-10-14T17:54:58.679",
+				"PartitionKeyType": "N",
+				"Name": "issues-dev"
+			},
+			"lastPushDirHash": "5Pg61cnv8iPmCUu8s9+8juuAE8Y="
+		}
+	},
+	"api": {
+		"buildinrest": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "buildinrest",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/buildin-dev-20190905184223-deployment/amplify-cfn-templates/api/buildinrest-cloudformation-template.json",
+				"logicalId": "apibuildinrest"
+			},
+			"lastPushTimeStamp": "2019-10-14T17:56:54.823Z",
+			"output": {
+				"ApiName": "buildinrest",
+				"RootUrl": "https://dlqkxyqqcd.execute-api.ap-south-1.amazonaws.com/dev"
+			},
+			"lastPushDirHash": "st1Ovn/p/VzRQ+1UCDthO5W3X7c="
 		}
 	}
 }

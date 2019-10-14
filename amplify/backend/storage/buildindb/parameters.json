@@ -1,0 +1,7 @@
+{
+    "tableName": "issues",
+    "partitionKeyName": "id",
+    "partitionKeyType": "N",
+    "sortKeyName": "upvotes",
+    "sortKeyType": "N"
+}

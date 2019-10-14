@@ -122,6 +122,95 @@
 				}
 			}
 		},
+		"functionbuildindbTrigger6b1f8eb8": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/buildin-dev-20190905184223-deployment/amplify-cfn-templates/function/buildindbTrigger6b1f8eb8-cloudformation-template.json",
+				"Parameters": {
+					"storagebuildindbName": {
+						"Fn::GetAtt": [
+							"storagebuildindb",
+							"Outputs.Name"
+						]
+					},
+					"storagebuildindbArn": {
+						"Fn::GetAtt": [
+							"storagebuildindb",
+							"Outputs.Arn"
+						]
+					},
+					"storagebuildindbStreamArn": {
+						"Fn::GetAtt": [
+							"storagebuildindb",
+							"Outputs.StreamArn"
+						]
+					},
+					"env": "dev"
+				}
+			}
+		},
+		"functionbuildinrest": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/buildin-dev-20190905184223-deployment/amplify-cfn-templates/function/buildinrest-cloudformation-template.json",
+				"Parameters": {
+					"storagebuildindbName": {
+						"Fn::GetAtt": [
+							"storagebuildindb",
+							"Outputs.Name"
+						]
+					},
+					"storagebuildindbArn": {
+						"Fn::GetAtt": [
+							"storagebuildindb",
+							"Outputs.Arn"
+						]
+					},
+					"env": "dev"
+				}
+			}
+		},
+		"storagebuildindb": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/buildin-dev-20190905184223-deployment/amplify-cfn-templates/storage/buildindb-cloudformation-template.json",
+				"Parameters": {
+					"tableName": "issues",
+					"partitionKeyName": "id",
+					"partitionKeyType": "N",
+					"sortKeyName": "upvotes",
+					"sortKeyType": "N",
+					"env": "dev"
+				}
+			}
+		},
+		"apibuildinrest": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/buildin-dev-20190905184223-deployment/amplify-cfn-templates/api/buildinrest-cloudformation-template.json",
+				"Parameters": {
+					"authRoleName": {
+						"Ref": "AuthRoleName"
+					},
+					"unauthRoleName": {
+						"Ref": "UnauthRoleName"
+					},
+					"functionbuildinrestName": {
+						"Fn::GetAtt": [
+							"functionbuildinrest",
+							"Outputs.Name"
+						]
+					},
+					"functionbuildinrestArn": {
+						"Fn::GetAtt": [
+							"functionbuildinrest",
+							"Outputs.Arn"
+						]
+					},
+					"env": "dev"
+				}
+			}
+		},
 		"UpdateRolesWithIDPFunction": {
 			"DependsOn": [
 				"AuthRole",
