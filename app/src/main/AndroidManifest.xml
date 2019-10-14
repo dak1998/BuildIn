@@ -19,7 +19,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-
+        <activity android:name=".activities.notices.NoticesActivity"></activity>
+        <activity android:name=".activities.events.EventsActivity" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
 
@@ -31,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.authentication.UserAuthenticationActivity" />
-        <activity android:name=".activities.issues.CreateNewIssueActivity"/>
+        <activity android:name=".activities.issues.CreateNewIssueActivity" />
         <activity android:name=".activities.issues.IssuesActivity" />
     </application>
 

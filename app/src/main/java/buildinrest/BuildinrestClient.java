@@ -19,7 +19,7 @@ import java.util.*;
 
 
 
-@com.amazonaws.mobileconnectors.apigateway.annotation.Service(endpoint = "https://dlqkxyqqcd.execute-api.ap-south-1.amazonaws.com/dev")
+//@com.amazonaws.mobileconnectors.apigateway.annotation.Service(endpoint = "https://dlqkxyqqcd.execute-api.ap-south-1.amazonaws.com/dev")
 public interface BuildinrestClient {
 
 
@@ -28,14 +28,14 @@ public interface BuildinrestClient {
      * @param request
      * @return ApiResponse
      */
-    com.amazonaws.mobileconnectors.apigateway.ApiResponse execute(com.amazonaws.mobileconnectors.apigateway.ApiRequest request);
+//    com.amazonaws.mobileconnectors.apigateway.ApiResponse execute(com.amazonaws.mobileconnectors.apigateway.ApiRequest request);
     
     /**
      * 
      * 
      * @return void
      */
-    @com.amazonaws.mobileconnectors.apigateway.annotation.Operation(path = "/upload/issue", method = "OPTIONS")
+//    @com.amazonaws.mobileconnectors.apigateway.annotation.Operation(path = "/upload/issue", method = "OPTIONS")
     void uploadIssueOptions();
     
     /**
@@ -43,7 +43,7 @@ public interface BuildinrestClient {
      * 
      * @return void
      */
-    @com.amazonaws.mobileconnectors.apigateway.annotation.Operation(path = "/upload/issue/{proxy+}", method = "OPTIONS")
+//    @com.amazonaws.mobileconnectors.apigateway.annotation.Operation(path = "/upload/issue/{proxy+}", method = "OPTIONS")
     void uploadIssueProxyOptions();
     
 }

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "455351253966",
+    "firebase_url": "https://buildin-d90f5.firebaseio.com",
+    "project_id": "buildin-d90f5",
+    "storage_bucket": "buildin-d90f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455351253966:android:aefb9d7766ca073286899f",
+        "android_client_info": {
+          "package_name": "aadl.com.buildin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455351253966-8f3a2qlckcb9g4c89646tkj9e6o650qi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEYhJuHbi6w04ViFOHkTV_5DHJz6uaFt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455351253966-8f3a2qlckcb9g4c89646tkj9e6o650qi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

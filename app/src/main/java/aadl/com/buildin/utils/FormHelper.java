@@ -3,6 +3,7 @@ package aadl.com.buildin.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -42,6 +43,7 @@ public class FormHelper {
             switch (this.parent) {
                 case Activity:
                     view = ((Activity) this.parentInstance).findViewById(id);
+                    break;
                 case Fragment:
                     view = ((View) this.parentInstance).findViewById(id);
                     break;
@@ -67,6 +69,7 @@ public class FormHelper {
 
     public static String guard(String string) throws FormGuardException {
         if (string.length() < 1) {
+            Log.e("ERROR", string);
             throw new FormGuardException("Can't be empty");
         }
         return string;

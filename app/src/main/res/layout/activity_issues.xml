@@ -10,6 +10,16 @@
 
     <include layout="@layout/named_action_bar" android:id="@+id/issues_action_bar" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/issues_action_bar"
+        android:overScrollMode="never"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
+
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add_issues_button"
 

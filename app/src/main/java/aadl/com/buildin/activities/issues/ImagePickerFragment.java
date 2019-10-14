@@ -90,7 +90,7 @@ public class ImagePickerFragment extends Fragment {
             mImageView.setImageBitmap(bitmap);
 
             ByteArrayOutputStream stream=new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 65, stream);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, stream);
             byte[] image=stream.toByteArray();
 
             String img_str = Base64.encodeToString(image, 0);

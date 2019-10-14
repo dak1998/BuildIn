@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import aadl.com.buildin.MainActivity;
+import aadl.com.buildin.activities.events.EventsActivity;
 import aadl.com.buildin.activities.issues.IssuesActivity;
+import aadl.com.buildin.activities.notices.NoticesActivity;
 
 public class HomeItem {
 
@@ -35,8 +37,8 @@ public class HomeItem {
         public static List<HomeItem> signInMenuItems() {
             List<HomeItem> items = new ArrayList<>();
 
-            items.add(new HomeItem("Events", "http://192.168.0.100:8999/calendar.png", MainActivity.class));
-            items.add(new HomeItem("Notices", "http://192.168.0.100:8999/protest.png",  MainActivity.class));
+            items.add(new HomeItem("Events", "http://192.168.0.100:8999/calendar.png", EventsActivity.class));
+            items.add(new HomeItem("Notices", "http://192.168.0.100:8999/protest.png",  NoticesActivity.class));
             items.add(new HomeItem("Issues", "http://192.168.0.100:8999/pros-and-cons.png",  IssuesActivity.class));
             items.add(new HomeItem("Contact Guards", "http://192.168.0.100:8999/policeman.png",  MainActivity.class));
             items.add(new HomeItem("Pay Maintenance Bill", "http://192.168.0.100:8999/payment.png",  MainActivity.class));

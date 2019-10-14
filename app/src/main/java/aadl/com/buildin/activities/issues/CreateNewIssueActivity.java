@@ -14,7 +14,11 @@ import android.view.View;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +36,7 @@ public class CreateNewIssueActivity extends AppCompatActivity implements ImagePi
 
     private ScreenSlidePagerAdapter mPagerAdapter;
 
-    private Map<Integer,String> imageDataList = new HashMap<>();
+    private Map<String,String> imageDataList = new HashMap<>();
 
 
     private FormHelper _helper;
@@ -67,7 +71,7 @@ public class CreateNewIssueActivity extends AppCompatActivity implements ImagePi
                     this.mPagerAdapter.appendNewFragment();
 
                     this.mPagerAdapter.notifyDataSetChanged();
-                    this.imageDataList.put(this.mPager.getCurrentItem(), data);
+                    this.imageDataList.put(""+this.mPager.getCurrentItem(), data);
 
                     this.mPager.setCurrentItem(this.mPagerAdapter.getCount()-1,true);
 
@@ -77,7 +81,7 @@ public class CreateNewIssueActivity extends AppCompatActivity implements ImagePi
                 break;
             case IMAGE_CANCELLED:
 
-                this.imageDataList.put(this.mPager.getCurrentItem(), "");
+                this.imageDataList.put(""+this.mPager.getCurrentItem(), "");
 
                 break;
         }
@@ -89,7 +93,26 @@ public class CreateNewIssueActivity extends AppCompatActivity implements ImagePi
             String description =FormHelper.guard((_helper.getInput(R.id.description)));
 
 
-        } catch (FormGuardException fe) {
+            DatabaseReference db = FirebaseDatabase.getInstance().getReference();
+
+            String key = db.child("issues").push().getKey();
+
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("title", title);
+            map.put("description", description);
+            map.put("upvotes", "0");
+            map.put("downvotes", "0");
+            map.put("image_data", this.imageDataList);
+
+            db.child("issues/"+key).setValue(map);
+
+
+            Toast.makeText(this, "Issue created!", Toast.LENGTH_LONG).show();
+            this.mActionBar.back();
+
+
+        } catch (Exception fe) {
+            fe.printStackTrace();
             Snackbar.make(view, fe.getMessage(), Snackbar.LENGTH_LONG).show();
         }
     }
