@@ -13,4 +13,9 @@
     <string name="password">Password</string>
     <string name="email_address">Email Address</string>
     <string name="flat_number">Flat Number</string>
+    <string name="create_issue_text">&#128071;&#127995; Please fill the details below </string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="create">Create</string>
+    <string name="add_an_image">Add an image</string>
 </resources>

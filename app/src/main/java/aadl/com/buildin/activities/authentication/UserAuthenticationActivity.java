@@ -34,6 +34,9 @@ public class UserAuthenticationActivity extends FragmentActivity implements Logi
         mPager = findViewById(R.id.authentication_view_pager);
         PagerAdapter pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(pagerAdapter);
+
+
+
     }
 
     private void initializeView () {
