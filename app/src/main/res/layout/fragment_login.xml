@@ -35,7 +35,7 @@
                 android:layout_margin="30dp"
                 android:id="@+id/app_icon"
                 android:layout_centerHorizontal="true"
-                android:background="@mipmap/ic_launcher_round"
+                android:background="@mipmap/ic_launcher"
                 />
 
             <LinearLayout

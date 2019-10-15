@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -14,12 +15,15 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.notices.NoticesActivity"></activity>
+        <activity android:name=".activities.ComingSoonActivity"></activity>
+        <activity android:name=".activities.SettingsActivity" />
+        <activity android:name=".activities.guards.GuardsActivity" />
+        <activity android:name=".activities.notices.NoticesActivity" />
         <activity android:name=".activities.events.EventsActivity" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />

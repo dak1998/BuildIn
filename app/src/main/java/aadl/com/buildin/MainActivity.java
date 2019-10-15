@@ -1,5 +1,9 @@
 package aadl.com.buildin;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -18,6 +22,7 @@ import com.amazonaws.mobile.client.UserStateListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import aadl.com.buildin.activities.SettingsActivity;
 import aadl.com.buildin.activities.authentication.UserAuthenticationActivity;
 import aadl.com.buildin.adapters.HomeItemAdapter;
 import aadl.com.buildin.models.HomeItem;
@@ -73,13 +78,23 @@ public class MainActivity extends AppCompatActivity implements UserStateListener
         mHomeItemsView.setItemAnimator(new DefaultItemAnimator());
         mHomeItemsView.setAdapter(mHomeItemAdapter);
 
-
-
+        onCall();
     }
 
     public void onUserImageClick(View view) {
         Redirector.from(this).to(imageIconClass).withAnimation().go();
     }
+    public void onCall() {
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
+
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                    this,
+                    new String[]{Manifest.permission.CALL_PHONE},
+                    123);
+        }
+    }
+
 
 
     @Override
@@ -101,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements UserStateListener
                 MainActivity.this.mHomeItems.addAll(
                         state == UserState.SIGNED_IN
                                 ? HomeItem.Helper.signInMenuItems()
-                                : HomeItem.Helper.signInMenuItems()
+                                : HomeItem.Helper.guestMenuItems(defaultHomeItemDestination)
                 );
 
                 mHomeItemAdapter.notifyDataSetChanged();
@@ -133,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements UserStateListener
 
     private void setUserImageDestination (UserState state) {
         if (state == UserState.SIGNED_IN) {
-            this.imageIconClass = MainActivity.class;
+            this.imageIconClass = SettingsActivity.class;
 
         } else {
             this.imageIconClass = UserAuthenticationActivity.class;
